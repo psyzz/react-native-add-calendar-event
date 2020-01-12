@@ -273,19 +273,25 @@ RCT_EXPORT_METHOD(presentEventEditingDialog:(NSDictionary *)options resolver:(RC
             EKAlarm * alarm = [EKAlarm alarmWithAbsoluteDate:originalDate];
             event.alarms = @[alarm];
         }
-        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"1"] == NSOrderedSame) 
+        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"5"] == NSOrderedSame) 
         { 
             NSDate *alertReminder = [originalDate dateByAddingTimeInterval:-60*5]; 
             EKAlarm * alarm = [EKAlarm alarmWithAbsoluteDate:alertReminder];
             event.alarms = @[alarm];
         }
-        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"2"] == NSOrderedSame) 
+        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"15"] == NSOrderedSame) 
+        { 
+            NSDate *alertReminder = [originalDate dateByAddingTimeInterval:-60*15]; 
+            EKAlarm * alarm = [EKAlarm alarmWithAbsoluteDate:alertReminder];
+            event.alarms = @[alarm];
+        }
+        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"30"] == NSOrderedSame) 
         {
             NSDate *alertReminder = [originalDate dateByAddingTimeInterval:-60*30]; 
             EKAlarm * alarm = [EKAlarm alarmWithAbsoluteDate:alertReminder];
             event.alarms = @[alarm];
         }
-        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"3"] == NSOrderedSame) 
+        if ([[RCTConvert NSString:options[_alert]] caseInsensitiveCompare:@"60"] == NSOrderedSame) 
         { 
             NSDate *alertReminder = [originalDate dateByAddingTimeInterval:-60*60]; 
             EKAlarm * alarm = [EKAlarm alarmWithAbsoluteDate:alertReminder];
